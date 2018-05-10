@@ -39,3 +39,21 @@ easyHttp.prototype.post = function(url, data, callBack) {
 
     this.http.send(JSON.stringify(data));
 }
+
+// prototype for a UPDATE/PUT request
+easyHttp.prototype.put = function(url, data, callBack) {
+    // defining our request type and if its async or not
+    this.http.open('PUT', url, true);
+
+    // setting headers
+    this.http.setRequestHeader('Content-type', 'application/json')
+
+    // setting this to a variable to that it could be used inside the onload method
+    let self = this;
+    this.http.onload = function() {
+        // sending the null as an error and 2nd pram as a response
+        callBack(null, self.http.responseText);
+    };
+
+    this.http.send(JSON.stringify(data));
+}

@@ -1,4 +1,11 @@
+// instantiating easyHttp constructor funciton
 const http = new easyHttp;
+
+// Creating Data for Post Request
+const data = {
+    title: "Custom Post",
+    body: "Custom Post Body"
+}
 
 // Get Data
 http.get('https://jsonplaceholder.typicode.com/posts', function(err, res) {
@@ -11,24 +18,25 @@ http.get('https://jsonplaceholder.typicode.com/posts', function(err, res) {
     }
 });
 
-// Create Data
-const data = {
-    title: "Custom Post",
-    body: "Custom Post Body"
-}
-
 // Post Data
 http.post('https://jsonplaceholder.typicode.com/posts', data, function(err, res) {
     if (err) {
         console.log(err);
-    } else {
+    } else {s
         console.log(res);               // stringified form
         console.log(JSON.parse(res));   // parsed form
     }
-})
+});
 
 
-// adding post data to div in an asyn way (GET)
+
+
+
+
+
+
+
+// adding data from (GET) request to a div in an asyn way
 // function addResponseToView(res) {
 //     const post = JSON.parse(res);
 
