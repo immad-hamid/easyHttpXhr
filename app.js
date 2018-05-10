@@ -22,7 +22,7 @@ http.get('https://jsonplaceholder.typicode.com/posts', function(err, res) {
 http.post('https://jsonplaceholder.typicode.com/posts', data, function(err, res) {
     if (err) {
         console.log(err);
-    } else {s
+    } else {
         console.log(res);               // stringified form
         console.log(JSON.parse(res));   // parsed form
     }
